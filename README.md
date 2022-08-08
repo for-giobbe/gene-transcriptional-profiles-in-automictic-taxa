@@ -22,18 +22,14 @@ The manuscript will be made available [here]() when published.
 
 The repo is organized in four folders:
 
-- scripts_snakefiles
+- [scripts_snakefiles](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_snakefiles)
 
-	- snakefile_orthology_inference 
-	sankefile to perform orthology inference among the four species considered
-	
-	- snakefile_transcriptome_annotation - sankefile 
-	snakefile to annotate the assembled transcriptomes using Transdecoder
-	
+	- snakefile_orthology_inference 	
+	- snakefile_transcriptome_annotation	
 	- snakefile_transcriptome_filter_aa
 	- snakefile_transcriptome_goterms
 
-- scripts_shell
+- [scripts_shell](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_shell)
 	
 	- assign_GOterms_to_orthogroups.sh
 	- differential_expression.sh
@@ -56,6 +52,6 @@ The repo is organized in four folders:
 	- phylostratigraphy_and_sankyeys.R
 	- phylostratigraphy_z-test.R
 
-- intermediate_files
+- [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files)
 
 	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
