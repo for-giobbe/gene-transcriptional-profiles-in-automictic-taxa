@@ -5,9 +5,6 @@
 _Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with different cytological mechanisms of automictic parthenogenesis._
 
 
----
-
-
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/0/0b/Bacillus_rossius_Livorno.jpg)
 
 
