@@ -1,7 +1,7 @@
 require(tidyverse)
 require(GeneOverlap)
 
-df <- read.table("../input_files/phylostrata.csv",sep=",",header=T)
+df <- read.table("../intermediate_files/phylostrata.csv",sep=";",header=T)
 
 df <- df %>%bind_rows(summarise_all(., ~if(is.numeric(.)) sum(.) else "Total"))
 

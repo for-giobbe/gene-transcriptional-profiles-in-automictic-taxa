@@ -7,15 +7,15 @@ myCol <- c("#f9d47c","#00b4d7","#71ceea","#f78b88")
 
 ###################### GONADS ############################################################################################
 
-BAT <- read.csv("../input_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BRO <- read.csv("../input_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BGM <- read.csv("../input_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
+BAT <- read.csv("../intermediate_files//BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BRO <- read.csv("../intermediate_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BGM <- read.csv("../intermediate_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
 
 tmp <- merge(BAT,BRO,by="transcript")
 df <- merge(tmp,BGM,by="transcript")
 
-BRO <- read.table(file = "../input_files/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
-BAT <- read.table(file = "../input_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
+BRO <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
+BAT <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
 
 BGM <- (subset(BRO, BGM_F_padj<0.05 & BGM_F_logFC>1))$OG
 BRO <- (subset(BRO, BRO_padj<0.05 & BRO_logFC>1))$OG
@@ -41,15 +41,15 @@ gnds <- autoplot(pca_res, data =  de_gonads, colour ='condition', frame = TRUE, 
 
 ###################### LEGS ############################################################################################
 
-BAT <- read.csv("../input_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BRO <- read.csv("../input_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BGM <- read.csv("../input_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
+BAT <- read.csv("../intermediate_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BRO <- read.csv("../intermediate_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BGM <- read.csv("../intermediate_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
 
 tmp <- merge(BAT,BRO,by="transcript")
 df <- merge(tmp,BGM,by="transcript")
 
-BRO <- read.table(file = "../input_files/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
-BAT <- read.table(file = "../input_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
+BRO <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
+BAT <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
 
 BGM <- (subset(BRO, BGM_F_padj<0.05 & BGM_F_logFC<1))$OG
 BRO <- (subset(BRO, BRO_padj<0.05 & BRO_logFC<1))$OG
@@ -77,9 +77,9 @@ legs <- autoplot(pca_res, data =  de_legs, colour ='condition', frame = TRUE, fr
 
 ###################### GONADSALL ############################################################################################
 
-BAT <- read.csv("../input_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BRO <- read.csv("../input_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BGM <- read.csv("../input_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
+BAT <- read.csv("../intermediate_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BRO <- read.csv("../intermediate_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BGM <- read.csv("../intermediate_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
 
 tmp <- merge(BAT,BRO,by="transcript")
 df <- merge(tmp,BGM,by="transcript")
@@ -101,9 +101,9 @@ gndsall <- autoplot(pca_res, data =  de_gonads, colour ='condition', frame = TRU
 
 ###################### LEGSALL ############################################################################################
 
-BAT <- read.csv("../input_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BRO <- read.csv("../input_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
-BGM <- read.csv("../input_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
+BAT <- read.csv("../intermediate_files/BAT_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BRO <- read.csv("../intermediate_files/BRO_RSEM.TMM.EXPR.matrix.3sp.OGonly.csv")
+BGM <- read.csv("../intermediate_files/BGM_RSEM_mf.TMM.EXPR.matrix.3sp.OGonly.csv")
 
 tmp <- merge(BAT,BRO,by="transcript")
 df <- merge(tmp,BGM,by="transcript")

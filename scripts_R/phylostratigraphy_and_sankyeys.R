@@ -1,4 +1,3 @@
-require(WGCNA)
 require(data.table)
 require(tidyverse)
 require(grid)
@@ -12,9 +11,9 @@ require(VennDiagram)
 require(GeneOverlap)
 
 
-##########################################################################################################################  final BRO easy sankey ############################
+##########################################################################################################################  BRO sankey ############################
 
-tot <- read.table(file = "../inputs/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
+tot <- read.table(file = "../intermediate_files//new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
 
 dim(tot)
 
@@ -144,9 +143,9 @@ BRO_SAN <-    sankeyNetwork(Links = links_BRO, Nodes = nodes_BRO,
                             colourScale=my_color, LinkGroup="group", NodeGroup="group", nodePadding = 150, nodeWidth = 30,
                             iterations = 0)
 
-##########################################################################################################################  final BAT easy sankey ############################
+##########################################################################################################################  BAT sankey ############################
 
-tot <- read.table(file = "new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
+tot <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
 
 
  na.omit(tot[3],tot[9])
@@ -280,33 +279,32 @@ BAT_SAN <-    sankeyNetwork(Links = links_BAT, Nodes = nodes_BAT,
                             colourScale=my_color, LinkGroup="group", NodeGroup="group", nodePadding = 150, nodeWidth = 30,
                             iterations = 0)
 
-##########################################################################################################################  final phylostratigraphy ############################
+##########################################################################################################################  phylostratigraphy ############################
 
-
-bat_totale_exp = read.csv("../input_files/BAT_RSEM.counts.matrix.BAT_GND_vs_BAT_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
+bat_totale_exp = read.csv("../intermediate_files//BAT_RSEM.counts.matrix.BAT_GND_vs_BAT_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
 bat_totale_gonad_specific <- subset(bat_totale_exp, padj<0.005 & log2FoldChange > 1)
-write(bat_totale_exp[,1], file = "../input_files/bat_totale.txt")
+write(bat_totale_exp[,1], file = "../intermediate_files/bat_totale.txt")
 write(bat_totale_gonad_specific[,1], file = "bat_gonad_specific.txt")
 
-bro_totale_exp = read.csv("../input_files/BRO_RSEM.counts.matrix.BRO_GND_vs_BRO_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
+bro_totale_exp = read.csv("../intermediate_files/BRO_RSEM.counts.matrix.BRO_GND_vs_BRO_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
 bro_totale_gonad_specific <- subset(bro_totale_exp, padj<0.005 & log2FoldChange > 1)
-write(bro_totale_exp[,1], file = "../input_files/bro_totale.txt")
+write(bro_totale_exp[,1], file = "../intermediate_files/bro_totale.txt")
 write(bro_totale_gonad_specific[,1], file = "bro_gonad_specific.txt")
 
-bgm_f_totale_exp = read.csv("../input_files/BGM_RSEM_f_only.counts.matrix.BGM_GND_vs_BGM_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
-bgm_m_totale_exp = read.csv("../input_files/BGM_RSEM_m_only.counts.matrix.BGM_GND_vs_BGM_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
+bgm_f_totale_exp = read.csv("../intermediate_files/BGM_RSEM_f_only.counts.matrix.BGM_GND_vs_BGM_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
+bgm_m_totale_exp = read.csv("../intermediate_files/BGM_RSEM_m_only.counts.matrix.BGM_GND_vs_BGM_LEG.DESeq2.DE_results", sep ="\t", header = TRUE)
 
 DE_bgm_B <- merge(bgm_f_totale_exp, bgm_m_totale_exp, by="transcript")
-write(DE_bgm_B[,1], file = "../input_files/bgm_totale.txt")
+write(DE_bgm_B[,1], file = "../intermediate_files/bgm_totale.txt")
 
 bgm_B_totale_gonad_specic <- subset(DE_bgm_B, padj.x<0.005 & padj.y<0.005 & log2FoldChange.x > 1 & log2FoldChange.y > 1)
-write(bgm_B_totale_gonad_specic[,1], file = "../input_files/bgm_B_gonad_specific.txt")
+write(bgm_B_totale_gonad_specic[,1], file = "../intermediate_files/bgm_B_gonad_specific.txt")
 
 bgm_f_totale_gonad_specic <- subset(DE_bgm_B, padj.x<0.005 & log2FoldChange.x > 1 & padj.y>0.005 & log2FoldChange.y < 1)
-write(bgm_f_totale_gonad_specic[,1], file = "../input_files/bgm_F_gonad_specific.txt")
+write(bgm_f_totale_gonad_specic[,1], file = "../intermediate_files/bgm_F_gonad_specific.txt")
 
 bgm_m_totale_gonad_specic <- subset(DE_bgm_B, padj.y<0.005 & log2FoldChange.y > 1 & padj.x>0.005 & log2FoldChange.x < 1)
-write(bgm_m_totale_gonad_specic[,1], file = "../input_files/bgm_M_gonad_specific.txt")
+write(bgm_m_totale_gonad_specic[,1], file = "../intermediate_files/bgm_M_gonad_specific.txt")
 
 
 length(bgm_B_totale_gonad_specic[,1]) 
@@ -316,10 +314,10 @@ length(bat_totale_gonad_specific[,1])
 length(bro_totale_gonad_specific[,1])
 
 
-##########################################################################################################################  final phylostratigraphy ############################
+##########################################################################################################################  phylostratigraphy ############################
 
 # create a dataset
-phylostrata = read.csv("../inputs/phylostrata.csv", sep =";", header = TRUE)
+phylostrata = read.csv("../intermediate_files/phylostrata.csv", sep =";", header = TRUE)
 phylostrata <- as.data.table(phylostrata)
 phylostrata_long <- melt(phylostrata, id.vars=c("type"))
 
@@ -334,9 +332,9 @@ age <- ggplot(phylostrata_long, aes(fill=type, y=variable, x=value)) + geom_bar(
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
  
-##########################################################################################################################  the new overlaps #######
+##########################################################################################################################  overlaps #######
 
-tot <- read.table(file = "new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
+tot <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BAT_single.lst", sep = " ", header= TRUE)
 
 #     non_DE_in_both                    
 NDB_NR <- subset(tot, BGM_M_padj>0.05 & BGM_F_padj>0.05 & BAT_padj>0.05)
@@ -385,7 +383,7 @@ NOR_UGM_BAT <- c(UPM_NR$OG,UPM_DR$OG,UMDF_NR$OG,UMDF_DR$OG)
 NOR_UGB_BAT <- c(UPB_NR$OG,UPB_DR$OG)
 NOR_NOG_BAT <- c(NDB_NR$OG,NDB_DR$OG,DNB_NR$OG,DNB_DR$OG,DNM_NR$OG,DNM_DR$OG,DNF_NR$OG,DNF_DR$OG)
 
-tot <- read.table(file = "new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
+tot <- read.table(file = "../intermediate_files/new_DE_BGM_VS_BRO_single.lst", sep = " ", header= TRUE)
 
 #     non_DE_in_both                    
 NDB_NR <- subset(tot, BGM_M_padj>0.05 & BGM_F_padj>0.05 & BRO_padj>0.05)
