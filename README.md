@@ -44,7 +44,7 @@ The repo is organized in four folders:
 	- reformat_orthogroups.sh
 	- taxonomy_assignement.sh
 
-- scripts_R
+- [scripts_R](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_R)
 
 	- gene_enrichment.R
 	- normalized_counts_PCA.R
