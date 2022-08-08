@@ -16,6 +16,14 @@ Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**]
 
 The manuscript will be made available [here]() when published.
 
+NB: several abbreviations are used, including:
+
+- BAT for _Bacillus atticus_
+- BRO for _Bacillus rossius
+- BGM for _Bacillus grandii_
+- BP for Biological Processes
+- MF for Molecular Functions
+
 
 ---
 
