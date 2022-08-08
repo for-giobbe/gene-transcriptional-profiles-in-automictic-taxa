@@ -10,17 +10,9 @@ _Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with differ
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/0/0b/Bacillus_rossius_Livorno.jpg)
 
-This repository contains the code used to study the molecular groundplan of automixis.
 
-Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
+This repository contains the code used to study the molecular groundplan of automixis in Bacillus stick insects. The scripts are named to be largely self-explanatory and the repo is organized in four folders:
 
-The manuscript will be made available [here]() when published.
-
-
----
-
-
-The repo is organized in four folders:
 
 - [scripts_snakefiles](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_snakefiles)
 
@@ -28,6 +20,7 @@ The repo is organized in four folders:
 	- snakefile_transcriptome_annotation	
 	- snakefile_transcriptome_filter_aa
 	- snakefile_transcriptome_goterms
+
 
 - [scripts_shell](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_shell)
 	
@@ -45,6 +38,7 @@ The repo is organized in four folders:
 	- reformat_orthogroups.sh
 	- taxonomy_assignement.sh
 
+
 - [scripts_R](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_R)
 
 	- gene_enrichment.R
@@ -52,15 +46,20 @@ The repo is organized in four folders:
 	- phylostratigraphy_and_sankyeys.R
 	- phylostratigraphy_z-test.R
 
+
 - [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files)
 
 	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
 
----
 
+Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
+
+
+The manuscript will be made available [here]() when published.
 
 
 *NB*: several abbreviations are used, including:
+
 
 - BAT for _Bacillus atticus_
 - BRO for _Bacillus rossius_
