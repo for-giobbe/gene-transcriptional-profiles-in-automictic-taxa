@@ -1,7 +1,8 @@
 
 **code repo for the manuscript:** 
 
-_Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with different cytological mechanisms of automictic parthenogenesis._**
+
+_Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with different cytological mechanisms of automictic parthenogenesis._
 
 
 ---
