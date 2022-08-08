@@ -8,7 +8,16 @@ _Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with differ
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/0/0b/Bacillus_rossius_Livorno.jpg)
 
 
-This repository contains the code used to study the molecular groundplan of automixis in Bacillus stick insects. The scripts are named to be largely self-explanatory and the repo is organized in four folders:
+This repository contains the code used to study the molecular groundplan of automixis in Bacillus stick insects. 
+
+
+Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
+
+
+The manuscript will be made available [here]() when published.
+
+
+The scripts names are largely self-explanatory and the repo is organized in four folders:
 
 
 - [scripts_snakefiles](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_snakefiles)
@@ -49,14 +58,7 @@ This repository contains the code used to study the molecular groundplan of auto
 	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
 
 
-Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
-
-
-The manuscript will be made available [here]() when published.
-
-
 *NB*: several abbreviations are used, including:
-
 
 - BAT for _Bacillus atticus_
 - BRO for _Bacillus rossius_
