@@ -16,14 +16,6 @@ Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**]
 
 The manuscript will be made available [here]() when published.
 
-NB: several abbreviations are used, including:
-
-- BAT for _Bacillus atticus_
-- BRO for _Bacillus rossius
-- BGM for _Bacillus grandii_
-- BP for Biological Processes
-- MF for Molecular Functions
-
 
 ---
 
@@ -63,3 +55,15 @@ The repo is organized in four folders:
 - [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files)
 
 	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
+
+---
+
+
+
+*NB*: several abbreviations are used, including:
+
+- BAT for _Bacillus atticus_
+- BRO for _Bacillus rossius_
+- BGM for _Bacillus grandii_
+- BP for Biological Processes
+- MF for Molecular Functions
