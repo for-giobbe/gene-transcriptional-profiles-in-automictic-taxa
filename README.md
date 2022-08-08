@@ -55,7 +55,7 @@ The scripts names are largely self-explanatory and the repo is organized in four
 
 - [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files.zip)
 
-	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
+	- a zipped folder containing intermediate files necessary for the paper figures generated using the scripts in [scripts_R](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/scripts_R).
 
 
 *NB*: several abbreviations are used, including:
