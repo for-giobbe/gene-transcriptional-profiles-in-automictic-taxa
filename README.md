@@ -24,8 +24,12 @@ The repo is organized in four folders:
 
 - scripts_snakefiles
 
-	- snakefile_orthology_inference
-	- snakefile_transcriptome_annotation
+	- snakefile_orthology_inference 
+	sankefile to perform orthology inference among the four species considered
+	
+	- snakefile_transcriptome_annotation - sankefile 
+	snakefile to annotate the assembled transcriptomes using Transdecoder
+	
 	- snakefile_transcriptome_filter_aa
 	- snakefile_transcriptome_goterms
 
