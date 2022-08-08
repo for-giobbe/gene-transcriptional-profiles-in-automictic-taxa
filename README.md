@@ -53,7 +53,7 @@ The scripts names are largely self-explanatory and the repo is organized in four
 	- phylostratigraphy_z-test.R
 
 
-- [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files)
+- [intermediate_files](https://github.com/for-giobbe/gene-transcriptional-profiles-in-automictic-taxa/tree/main/intermediate_files.zip)
 
 	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
 
