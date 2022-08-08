@@ -1,5 +1,7 @@
 
-**code repo for the manuscript _Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with different cytological mechanisms of automictic parthenogenesis._**
+**code repo for the manuscript:** 
+
+_Gene transcriptional profiles in gonads of Bacillus taxa (Phasmida) with different cytological mechanisms of automictic parthenogenesis._**
 
 
 ---
@@ -9,13 +11,15 @@
 
 This repository contains the code used to study the molecular groundplan of automixis.
 
-Experiment reads have been deposited under the NCBI BioProject **PRJNA578804**.
+Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
 
 The manuscript will be made available [here]() when published.
 
+
 ---
 
-The rep is organized in four folders:
+
+The repo is organized in four folders:
 
 - scripts_snakefiles
 
@@ -49,4 +53,4 @@ The rep is organized in four folders:
 
 - intermediate_files
 
-	- a zipped folder containing all the intermediate files necessary to generate the figures using the Rscripts
+	- a zipped folder containing all the intermediate files necessary to generate the figures using the scripts in the scripts_R folder.
