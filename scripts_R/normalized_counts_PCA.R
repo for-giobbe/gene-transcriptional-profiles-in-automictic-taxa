@@ -3,7 +3,7 @@ library(data.table)
 library(ggplot2)
 library(gridExtra)
 
-myCol <- c("#f9d47c","#00b4d7","#71ceea","#f78b88")
+myCol <- c("#f9d47c","#71ceea","blue","#f78b88")
 
 ###################### GONADS ############################################################################################
 
@@ -31,13 +31,25 @@ rownames(de_gonads)
 
 pca_res <- prcomp(de_gonads)
 
+summ <- summary(pca_res)
+
 de_gonads$condition <- c("atticus","atticus","atticus","atticus","atticus","atticus",
                          "rossius","rossius","rossius","rossius","rossius","rossius",
                          "grandii female","grandii female","grandii female","grandii female","grandii female","grandii female",
                          "grandii male","grandii male","grandii male","grandii male","grandii male","grandii male")
 
-gnds <- autoplot(pca_res, data =  de_gonads, colour ='condition', frame = TRUE, frame.type = 'norm') + 
-  theme_light() + coord_fixed() + scale_color_manual(values = myCol) + theme(legend.position="none") + xlim(1,-1) + ylim(1,-1)
+df <- cbind(pca_res$x[,1:2], de_gonads$condition) %>% as.data.frame()
+df$V3 <- as.factor(df$V3)
+df$PC1 <- as.numeric(df$PC1)
+df$PC2 <- as.numeric(df$PC2)
+
+gnds <- ggplot(df, aes(PC1, PC2, colour = V3)) +
+  geom_point(size = 3) + scale_color_manual(values = myCol) + coord_fixed() +
+  stat_ellipse(geom = "polygon", aes(fill = after_scale(alpha(colour, 0))), size = 0.75, type = "norm", linetype = 2) + theme_bw() + 
+  theme(legend.position = "none") +
+  labs(x=paste("PC1 (",round(summ$importance[2,1],2)*100,"%)", sep="")) + labs(y=paste("PC2 (",round(summ$importance[2,2],2)*100,"%)", sep="")) +
+  theme(aspect.ratio=1) + theme(axis.ticks.x = element_blank(), axis.text.x = element_blank(),axis.ticks.y = element_blank(), axis.text.y = element_blank())
+
 
 ###################### LEGS ############################################################################################
 
@@ -67,13 +79,24 @@ rownames(de_legs)
 
 pca_res <- prcomp(de_legs)
 
+summ <- summary(pca_res)
+
 de_legs$condition <- c("atticus","atticus","atticus","atticus","atticus","atticus",
                          "rossius","rossius","rossius","rossius","rossius","rossius",
                          "grandii female","grandii female","grandii female","grandii female","grandii female","grandii female",
                          "grandii male","grandii male","grandii male","grandii male","grandii male","grandii male")
 
-legs <- autoplot(pca_res, data =  de_legs, colour ='condition', frame = TRUE, frame.type = 'norm') + 
-  theme_light() + coord_fixed() + scale_color_manual(values = myCol) + theme(legend.position="none") + xlim(1,-1) + ylim(1,-1)
+df <- cbind(pca_res$x[,1:2], de_legs$condition) %>% as.data.frame()
+df$V3 <- as.factor(df$V3)
+df$PC1 <- as.numeric(df$PC1)
+df$PC2 <- as.numeric(df$PC2)
+
+legs <- ggplot(df, aes(PC1, PC2, colour = V3)) +
+  geom_point(size = 3) + scale_color_manual(values = myCol) + coord_fixed() +
+  stat_ellipse(geom = "polygon", aes(fill = after_scale(alpha(colour, 0))), size = 0.75, type = "norm", linetype = 2) + theme_bw() + 
+  theme(legend.position = "none") +
+  labs(x=paste("PC1 (",round(summ$importance[2,1],2)*100,"%)", sep="")) + labs(y=paste("PC2 (",round(summ$importance[2,2],2)*100,"%)", sep="")) +
+  theme(aspect.ratio=1) + theme(axis.ticks.x = element_blank(), axis.text.x = element_blank(),axis.ticks.y = element_blank(), axis.text.y = element_blank())
 
 ###################### GONADSALL ############################################################################################
 
@@ -90,14 +113,24 @@ rownames(de_gonads)
 
 pca_res <- prcomp(de_gonads)
 
+summ <- summary(pca_res)
+
 de_gonads$condition <- c("atticus","atticus","atticus","atticus","atticus","atticus",
                          "rossius","rossius","rossius","rossius","rossius","rossius",
                          "grandii female","grandii female","grandii female","grandii female","grandii female","grandii female",
                          "grandii male","grandii male","grandii male","grandii male","grandii male","grandii male")
 
-gndsall <- autoplot(pca_res, data =  de_gonads, colour ='condition', frame = TRUE, frame.type = 'norm') + 
-  theme_light() + coord_fixed() + scale_color_manual(values = myCol) + theme(legend.position="none") + xlim(1.1,-1.1) + ylim(1.1,-1.1)
+df <- cbind(pca_res$x[,1:2], de_gonads$condition) %>% as.data.frame()
+df$V3 <- as.factor(df$V3)
+df$PC1 <- as.numeric(df$PC1)
+df$PC2 <- as.numeric(df$PC2)
 
+gndsall <- ggplot(df, aes(PC1, PC2, colour = V3)) +
+  geom_point(size = 3) + scale_color_manual(values = myCol) + coord_fixed() +
+  stat_ellipse(geom = "polygon", aes(fill = after_scale(alpha(colour, 0))), size = 0.75, type = "norm", linetype = 2) + theme_bw() + 
+  theme(legend.position = "none") +
+  labs(x=paste("PC1 (",round(summ$importance[2,1],2)*100,"%)", sep="")) + labs(y=paste("PC2 (",round(summ$importance[2,2],2)*100,"%)", sep="")) +
+  theme(aspect.ratio=1) + theme(axis.ticks.x = element_blank(), axis.text.x = element_blank(),axis.ticks.y = element_blank(), axis.text.y = element_blank())
 
 ###################### LEGSALL ############################################################################################
 
@@ -114,15 +147,25 @@ rownames(de_legs)
 
 pca_res <- prcomp(de_legs)
 
+summ <- summary(pca_res)
+
 de_legs$condition <- c("atticus","atticus","atticus","atticus","atticus","atticus",
                        "rossius","rossius","rossius","rossius","rossius","rossius",
                        "grandii female","grandii female","grandii female","grandii female","grandii female","grandii female",
                        "grandii male","grandii male","grandii male","grandii male","grandii male","grandii male")
 
-legsall <- autoplot(pca_res, data =  de_legs, colour ='condition', frame = TRUE, frame.type = 'norm') + 
-  theme_light() + coord_fixed() + scale_color_manual(values = myCol) + theme(legend.position="none") + xlim(1.1,-1.1) + ylim(1.1,-1.1)
+df <- cbind(pca_res$x[,1:2], de_legs$condition) %>% as.data.frame()
+df$V3 <- as.factor(df$V3)
+df$PC1 <- as.numeric(df$PC1)
+df$PC2 <- as.numeric(df$PC2)
+
+legsall <- ggplot(df, aes(PC1, PC2, colour = V3)) +
+  geom_point(size = 3) + scale_color_manual(values = myCol) + coord_fixed() +
+  stat_ellipse(geom = "polygon", aes(fill = after_scale(alpha(colour, 0))), size = 0.75, type = "norm", linetype = 2) + theme_bw() + 
+  theme(legend.position = "none") +
+  labs(x=paste("PC1 (",round(summ$importance[2,1],2)*100,"%)", sep="")) + labs(y=paste("PC2 (",round(summ$importance[2,2],2)*100,"%)", sep="")) +
+  theme(aspect.ratio=1) + theme(axis.ticks.x = element_blank(), axis.text.x = element_blank(),axis.ticks.y = element_blank(), axis.text.y = element_blank())
 
 ###################### plot ############################################################################################
 
 grid.arrange(gndsall,gnds,legsall,legs)
-
