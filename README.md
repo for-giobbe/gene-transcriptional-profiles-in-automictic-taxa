@@ -14,7 +14,7 @@ This repository contains the code used to study the molecular groundplan of auto
 Experiment reads have been deposited under the NCBI BioProject [**PRJNA578804**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA578804).
 
 
-The manuscript will be made available [here]() when published.
+The manuscript is available [here](https://zoologicalletters.biomedcentral.com/articles/10.1186/s40851-022-00197-z).
 
 
 The scripts names are largely self-explanatory and the repo is organized in four folders:
